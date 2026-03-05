@@ -96,30 +96,33 @@ void Pacman::render(sf::RenderWindow* window){
 	pacmanAnimationStep = (pacmanAnimationStep + 1) % (Resources::getQtdePacmanSprite()*500);
 	sf::Sprite pacman = Resources::getPacmanSprite(pacmanAnimationStep/500);
 
-	pacman.setOrigin( 7, 7);
-	pacman.setRotation( getAngulo() );
-	pacman.setScale(SIZE, SIZE);
-	pacman.setPosition(83+getPosX(), 66.5+getPosY());
+	pacman.setOrigin( sf::Vector2f(7.f, 7.f) );
+	pacman.setRotation( sf::degrees(getAngulo()) );
+	pacman.setScale( sf::Vector2f(SIZE, SIZE) );
+	pacman.setPosition( sf::Vector2f(83.f + getPosX(), 66.5f + getPosY()) );
 	window->draw(pacman);
 }
 
 void Pacman::keyPressed(int code){
-	switch(code){
-		case sf::Keyboard::Left:
+	auto key = static_cast<sf::Keyboard::Key>(code);
+	switch(key){
+		case sf::Keyboard::Key::Left:
 			std::cout << "Teclado esquerda!" << std::endl;
 			setDirSalva(LEFT);
 			break;
-		case sf::Keyboard::Right:
+		case sf::Keyboard::Key::Right:
 			std::cout << "Teclado direita!" << std::endl;
 			setDirSalva(RIGHT);
 			break;
-		case sf::Keyboard::Down:
+		case sf::Keyboard::Key::Down:
 			std::cout << "Teclado para baixo!" << std::endl;
 			setDirSalva(DOWN);
 			break;
-		case sf::Keyboard::Up:
+		case sf::Keyboard::Key::Up:
 			std::cout << "Teclado para cima!" << std::endl;
 			setDirSalva(UP);
+			break;
+		default:
 			break;
 	}
 }

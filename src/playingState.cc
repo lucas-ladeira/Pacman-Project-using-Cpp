@@ -39,28 +39,28 @@ void PlayingState::render(sf::RenderWindow* window) {
 	sf::Sprite pinkyGhost = Resources::getGhostSprite('p', ghostAnimationStep/500);
 	sf::Sprite yellowGhost = Resources::getGhostSprite('y', ghostAnimationStep/500);
 
-	maze.setScale(TAM, TAM);
-	maze.setPosition( 63.0f, 47.0f );
+	maze.setScale( sf::Vector2f(TAM, TAM) );
+	maze.setPosition( sf::Vector2f(63.0f, 47.0f) );
 	window->draw(maze);
 	
 	
 
 	
 	
-	redGhost.setScale(TAM, TAM);
-	redGhost.setPosition(210*0.85+63, 170*0.85+47);
+	redGhost.setScale( sf::Vector2f(TAM, TAM) );
+	redGhost.setPosition( sf::Vector2f(210*0.85f+63.f, 170*0.85f+47.f) );
 	window->draw(redGhost);
 
-	blueGhost.setScale(TAM, TAM);
-	blueGhost.setPosition(180*0.85+63, 215*0.85+47);
+	blueGhost.setScale( sf::Vector2f(TAM, TAM) );
+	blueGhost.setPosition( sf::Vector2f(180*0.85f+63.f, 215*0.85f+47.f) );
 	window->draw(blueGhost);
 
-	pinkyGhost.setScale(TAM, TAM);
-	pinkyGhost.setPosition(210*0.85+63, 215*0.85+47);
+	pinkyGhost.setScale( sf::Vector2f(TAM, TAM) );
+	pinkyGhost.setPosition( sf::Vector2f(210*0.85f+63.f, 215*0.85f+47.f) );
 	window->draw(pinkyGhost);
 
-	yellowGhost.setScale(TAM, TAM);
-	yellowGhost.setPosition(240*0.85+63, 215*0.85+47);
+	yellowGhost.setScale( sf::Vector2f(TAM, TAM) );
+	yellowGhost.setPosition( sf::Vector2f(240*0.85f+63.f, 215*0.85f+47.f) );
 	window->draw(yellowGhost);
 }
 
