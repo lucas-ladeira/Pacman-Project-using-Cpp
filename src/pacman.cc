@@ -69,8 +69,8 @@ void Pacman::loop(){
     float afterTargetTileX = round((targetOffsetX + posX)/wallSizeX + 1);
     float afterTargetTileY = round((targetOffsetY + posY)/wallSizeY + 1);
 
-    tile targetTileType = Window::maze.getTile(targetTileX, targetTileY);
-    tile afterTargetType = Window::maze.getTile(afterTargetTileX,
+    tile targetTileType = Window::getMaze().getTile(targetTileX, targetTileY);
+    tile afterTargetType = Window::getMaze().getTile(afterTargetTileX,
                                                 afterTargetTileY);
 
     if(targetTileType == P) {

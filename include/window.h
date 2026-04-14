@@ -21,13 +21,14 @@ public:
 
 	static void draw_texture(unsigned int texture, int length, int height, float angle);
 
-    static Maze maze; //TODO: lidar com o labirinto, não deve ser publico
+	static Maze& getMaze();
 
 private:
 	static sf::RenderWindow window;
 	static Console console;
 	static StateManager gamestates;
 	static Resources resources;
+	static Maze maze;
 };
 
 #endif

@@ -30,6 +30,11 @@ void Window::draw_texture(unsigned int texture, int length, int height, float an
 {
 }
 
+Maze& Window::getMaze()
+{
+	return maze;
+}
+
 void Window::run()
 {
 	//Link: https://www.sfml-dev.org/tutorials/3.0/window/events/
